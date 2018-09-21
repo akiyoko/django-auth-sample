@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -175,15 +176,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 # Authentication #
 ##################
 
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # 認証方式を「メールアドレスとパスワード」に変更
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 # ユーザー名は使用しない
 ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 
 # ユーザー登録確認メールは送信しない
 ACCOUNT_EMAIL_VERIFICATION = 'none'
