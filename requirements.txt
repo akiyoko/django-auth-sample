@@ -1,1 +1,2 @@
 Django~=2.1
+django-allauth==0.37.1
