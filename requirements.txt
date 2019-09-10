@@ -1,2 +1,2 @@
-Django~=2.1
-django-allauth==0.37.1
+Django==2.2.5
+django-allauth==0.40.0
